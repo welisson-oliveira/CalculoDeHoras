@@ -21,7 +21,7 @@ public class Calculates {
 	 * @return {@link Time}
 	 */
 	public Time missingTime(Time t1) throws Exception {
-		Time missingTime = new Time(9,00).subtractTime(getTimeNow().subtractTime(t1));
+		Time missingTime = new Time(9,0).subtractTime(getTimeNow().subtractTime(t1));
 		System.out.println(missingTime.toString());
 		return missingTime;
 	}
