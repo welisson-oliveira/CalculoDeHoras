@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
  */
 @RestController
 @AllArgsConstructor
-public class CalculatesController {
+public class CalculatesController extends AbstractController {
 
 	private final Calculates calculates;
 
