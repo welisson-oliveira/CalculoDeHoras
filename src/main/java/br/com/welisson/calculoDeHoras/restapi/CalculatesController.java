@@ -1,5 +1,7 @@
 package br.com.welisson.calculoDeHoras.restapi;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +37,16 @@ public class CalculatesController extends AbstractController {
 	@PostMapping(value="/calculates/exitTime")
 	public TimeWrapper exitTime(@RequestBody final TimesWrapper times){
 		final Time result = calculates.exitTime(times.getEntryTime(), times.getLunchTimeInit(), times.getLunchTimeEnd());
+		return new TimeWrapper(result);
+	}
+	
+	@GetMapping(value="/calculates/overtime/entryTime/{entryTime}/lunchTimeInit/{lunchTimeInit}/lunchTimeEnd/{lunchTimeEnd}/exitTime/{exitTime}")
+	public TimeWrapper exitTime(@PathVariable("entryTime") String entryTime, 
+								@PathVariable("lunchTimeInit") String lunchTimeInit, 
+								@PathVariable("lunchTimeEnd") String lunchTimeEnd, 
+								@PathVariable("exitTime") String exitTime){
+		
+		final Time result = calculates.getOvertime(entryTime, lunchTimeInit, lunchTimeEnd, exitTime);
 		return new TimeWrapper(result);
 	}
 

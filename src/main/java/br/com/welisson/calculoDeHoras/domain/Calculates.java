@@ -34,9 +34,7 @@ public class Calculates {
 	 * @return {@link Time}
 	 */
 	public Time likelyExit(Time t1){
-
-		Time time = t1.sumTime(new Time(9,00));
-		return time;
+		return t1.sumTime(new Time(9,00));
 	}
 
 
@@ -47,7 +45,7 @@ public class Calculates {
 	 * @param t3 - lunch time return
 	 * @return {@link Time}
 	 */
-	public Time exitTime(Time t1, Time t2, Time t3) {
+	public Time exitTime(final Time t1, final Time t2, final Time t3) {
 		Time finishTime = new Time(t1.getHour(),t1.getMinute());
 
 		Time firstTime = subtractTime(t1, t2);
@@ -58,6 +56,30 @@ public class Calculates {
 
 		return finishTime;
 	}
+	
+	public Time getOvertime(final Time t1, final Time t2, final Time t3, final Time exitTime){
+		Time normalExitTime = exitTime(t1, t2, t3);
+		return subtractTime(exitTime, normalExitTime);
+		
+	}
+	
+	public Time getOvertime(final String entryTime, final String lunchTimeInit, final String lunchTimeEnd, final String exitTime){
+		final Time t1 = paramResolver(entryTime);
+		final Time t2 = paramResolver(lunchTimeInit);
+		final Time t3 = paramResolver(lunchTimeEnd);
+		final Time t4 = paramResolver(exitTime);
+		
+		Time normalExitTime = exitTime(t1, t2, t3);
+		return subtractTime(normalExitTime, t4);
+		
+	}
+
+	private Time paramResolver(String exitTime) {
+		String[] split = exitTime.split(":");
+		return new Time(Integer.parseInt(split[0]), Integer.parseInt(split[1]));
+	}
+
+
 
 	private Time subtractTime(Time t1, Time t2) {
 		int hour;
@@ -92,8 +114,7 @@ public class Calculates {
 	}*/
 
 	private int subtractHour(int h1, int h2) {
-		int tot = h1 - h2;
-		return tot;
+		return h1 - h2;
 	}
 
 	private int subtractMinute(int m1, int m2){
