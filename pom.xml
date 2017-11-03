@@ -60,14 +60,13 @@
         	<id>heroku</id>
         	<activation>
                 <property>
-                    <name>env.ENV</name>
+                    <name>heroku</name>
                 </property>
             </activation>
             <properties>
-                <spring.profile>${env.ENV}</spring.profile>
+                <spring.profile>heroku</spring.profile>
                 <server.port>8081</server.port>
-                <cors.allowed.origins>https://calculo-de-horas-${spring.profile}.herokuapp.com,
-                https://calculo-de-horas.herokuapp.com</cors.allowed.origins> 
+                <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins> 
             </properties>
             <build>
                 <finalName>${project.artifactId}</finalName>
