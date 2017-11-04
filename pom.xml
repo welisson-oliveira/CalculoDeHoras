@@ -40,9 +40,8 @@
         <profile>
             <id>local</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
                 <property>
-                    <name>local</name>
+                    <name>!${env.ENV}</name>
                 </property>
             </activation>
             <properties>
