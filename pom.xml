@@ -59,7 +59,7 @@
         	<id>heroku</id>
         	<activation>
                 <property>
-                    <name>env.ENV</name>
+                    <name>${env.ENV}</name>
                 </property>
             </activation>
             <properties>
