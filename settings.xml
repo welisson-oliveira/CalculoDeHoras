@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <profiles>        
+        <profile>
+        	<id>heroku</id>
+        	<activation>
+                <property>
+                    <name>env.ENV</name>
+                </property>
+            </activation>
+            <properties>
+                <spring.profile>${env.ENV}</spring.profile>
+                <server.port>3000</server.port>
+                <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
+            </properties>
+        </profile>
+    </profiles>
+
+  <activeProfiles>
+    <activeProfile>heroku</activeProfile>
+  </activeProfiles>
+</settings>
