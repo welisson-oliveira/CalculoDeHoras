@@ -59,7 +59,7 @@
         	<id>heroku</id>
         	<activation>
                 <property>
-                    <name>${env.ENV}</name>
+                    <name>env.ENV</name>
                 </property>
             </activation>
             <properties>
@@ -69,9 +69,6 @@
                 https://calculo-de-horas.herokuapp.com</cors.allowed.origins> -->
                 <cors.allowed.origins>*</cors.allowed.origins>
             </properties>
-            <build>
-                <finalName>${project.artifactId}</finalName>
-            </build>
         </profile>
     </profiles>
 
