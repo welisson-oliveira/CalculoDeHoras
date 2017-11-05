@@ -65,7 +65,7 @@
             <properties>
                 <spring.profile>${env.ENV}</spring.profile>
                 <server.port>8081</server.port>
-                <cors.allowed.origins>*</cors.allowed.origins>
+                <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
             </properties>
         </profile>
     </profiles>
