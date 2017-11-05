@@ -45,7 +45,7 @@
                 </property>
             </activation>
             <properties>
-                <spring.profile>${env.ENV}</spring.profile>
+                <spring.profile>local</spring.profile>
                 <server.port>3000</server.port>
                 <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
             </properties>
