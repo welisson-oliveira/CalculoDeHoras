@@ -64,7 +64,7 @@
             </activation>
             <properties>
                 <spring.profile>${env.ENV}</spring.profile>
-                <server.port>3000</server.port>
+                <server.port>8081</server.port>
                 <cors.allowed.origins>*</cors.allowed.origins>
             </properties>
         </profile>
