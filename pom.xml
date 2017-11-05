@@ -47,8 +47,7 @@
             <properties>
                 <spring.profile>local</spring.profile>
                 <server.port>8081</server.port>
-                <!-- <cors.allowed.origins>*</cors.allowed.origins> -->
-                <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
+                <cors.allowed.origins>*</cors.allowed.origins>
 
             </properties>
             <build>
@@ -56,7 +55,7 @@
             </build>
         </profile>
         
-        <!-- <profile>
+        <profile>
         	<id>heroku</id>
         	<activation>
                 <property>
@@ -68,7 +67,7 @@
                 <server.port>3000</server.port>
                 <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
             </properties>
-        </profile> -->
+        </profile>
     </profiles>
 
     <dependencies>
