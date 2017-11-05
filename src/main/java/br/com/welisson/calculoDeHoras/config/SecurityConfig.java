@@ -31,7 +31,6 @@ import org.springframework.web.filter.CorsFilter;
  */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@PropertySource("classpath:/br/com/welisson/calculoDeHoras/security/security.properties")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Value("${endpoints.cors.allow-credentials}")
