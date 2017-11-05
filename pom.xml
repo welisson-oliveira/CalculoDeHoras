@@ -45,10 +45,9 @@
                 </property>
             </activation>
             <properties>
-                <spring.profile>local</spring.profile>
-                <server.port>8081</server.port>
-                <cors.allowed.origins>*</cors.allowed.origins>
-
+                <spring.profile>${env.ENV}</spring.profile>
+                <server.port>3000</server.port>
+                <cors.allowed.origins>https://calculo-de-horas.herokuapp.com</cors.allowed.origins>
             </properties>
             <build>
                 <finalName>${project.artifactId}</finalName>
